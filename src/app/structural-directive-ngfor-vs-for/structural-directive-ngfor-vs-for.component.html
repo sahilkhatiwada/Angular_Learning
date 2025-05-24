@@ -1,0 +1,95 @@
+<div class="row text-center">
+  <div class="col-12 m-3">
+    <h3>Example 4: Structural Directive NgFor vs For </h3>
+  </div>
+</div>
+
+<div class="row text-center">
+  <div class="col-8 bg-blue text-white p-2">
+    <select name="" id="" class="p-2">
+      <!-- <option [value]="emp.empNumber" *ngFor="let emp of employees">
+        {{ emp.empName }} - {{ emp.empNumber }}
+      </option> -->
+      @for(emp of employees; track emp;) {
+        <option [value]="emp.empNumber">
+          {{ emp.empName }} - {{ emp.empEmail }}
+        </option>
+      }
+    </select>
+  </div>
+  <div class="col-4">
+  
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Number</th>
+            <th>Email</th>
+            <th>Department</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- <tr *ngFor="let emp of employees">
+            <td>{{ emp.empName }}</td>
+            <td>{{ emp.empNumber }}</td>
+            <td>{{ emp.empEmail }}</td>
+            <td>{{ emp.empDept }}</td>
+        </tr> -->
+        @for(emp of employees; track emp;) {
+            <tr>
+                <td>{{ emp.empName }}</td>
+                <td>{{ emp.empNumber }}</td>
+                <td>{{ emp.empEmail }}</td>
+                <td>{{ emp.empDept }}</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+
+  </div>
+  <div class="col-4">
+    <ul class="none">
+        <!-- <li *ngFor="let company of companyList">{{ company }}</li> -->
+@for(company of companyList; track company; let f=$first, l=$last, e=$even, o=$odd , i=$index, c=$count;) {
+        @if(f == true){
+            <li class="text-success">First: {{ company }}</li>
+        } @if(l == true){
+            <li class="text-danger">Last: {{ company }}</li>
+        } @if(e == true){
+            <li class="text-primary">Even: {{ company }}</li>
+        } @if(o == true){
+            <li class="text-warning">Odd: {{ company }}</li>
+        } @else{
+
+            <li >{{ company }}</li>
+        }
+    }
+    @empty{
+        No company found....
+    }
+    </ul>
+  </div>
+</div>
+
+<div class="row text-center">
+    <div class="col-4">
+    <!-- <div *ngFor="let company of companyList">
+        {{ company }}
+    </div> -->
+    @for(company of companyList; track company;) {
+        <div>{{ company }}</div>
+    }
+    </div>
+    <div class="col-8">
+        <!-- <button class="btn btn-primary m-2" *ngFor="let company of companyList">
+{{ company }}
+        </button> -->
+        @for(company of companyList; track company;) {
+            <button class="btn btn-primary m-2">
+                {{ company }}
+            </button>
+        }
+        </div>
+</div>
