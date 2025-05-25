@@ -1,8 +1,9 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-structural-directive-ngfor-vs-for',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './structural-directive-ngfor-vs-for.component.html',
   styleUrl: './structural-directive-ngfor-vs-for.component.css'
 })
