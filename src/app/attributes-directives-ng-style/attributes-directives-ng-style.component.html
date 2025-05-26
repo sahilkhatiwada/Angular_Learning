@@ -1,19 +1,29 @@
 <div class="text-center m-3 pt-2">
-    <h4>Example 2 :Attributes Directives - ngStyle</h4>
+  <h4>Example 2 :Attributes Directives - ngStyle</h4>
 </div>
-
 
 <div class="row text-center pt-3">
   <div class="col-4">
-    <h3 [ngStyle]="{'color': styleColor,'font-size': '10px'}">This is the first example of ngStyle</h3>
+    <h3 [ngStyle]="{ color: styleColor, 'font-size': '10px' }">
+      This is the first example of ngStyle
+    </h3>
     <br />
     <button class="btn btn-warning m-2" (click)="updateColor('orange')">
       Change to Orange
-
     </button>
     <button class="btn btn-primary m-2" (click)="updateColor('blue')">
       Change to Blue
     </button>
   </div>
-</div>
+  <div class="col-4">
+    <h3 [ngStyle]="{ color: isTextOrange ? 'orange' : 'blue' }">
+      This is the second example of ngStyle
+    </h3>
+    <br />
+    <input type="checkbox" [(ngModel)]="isTextOrange" />Change Text Color
+  </div>
 
+  <div class="col-4">
+    <h3 [ngStyle]="customClass">This is the Third example of ngStyle</h3>
+  </div>
+</div>
