@@ -8,6 +8,7 @@ import { StructuralDirectiveNgswitchVsSwitchComponent } from './structural-direc
 import { AttributeDirectivesComponent } from './attribute-directives/attribute-directives.component';
 import { AttributesDirectivesNgStyleComponent } from './attributes-directives-ng-style/attributes-directives-ng-style.component';
 import { SignalsComponent } from './signals/signals.component';
+import { LinkedSignalComponent } from './linked-signal/linked-signal.component';
 
 @Component({
   selector: 'app-root',
@@ -20,7 +21,8 @@ import { SignalsComponent } from './signals/signals.component';
     StructuralDirectiveNgswitchVsSwitchComponent,
     AttributeDirectivesComponent,
     AttributesDirectivesNgStyleComponent,
-    SignalsComponent
+    SignalsComponent,
+    LinkedSignalComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
