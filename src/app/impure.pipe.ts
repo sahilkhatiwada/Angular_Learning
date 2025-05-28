@@ -1,12 +1,10 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'impure'
+  name: 'impure',
 })
 export class ImpurePipe implements PipeTransform {
-
-  transform(value: unknown, ...args: unknown[]): unknown {
-    return null;
+  transform(value: any, ...args: any[]): any {
+    return new Date().toLocaleTimeString();
   }
-
 }
