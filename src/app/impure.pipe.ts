@@ -8,3 +8,4 @@ export class ImpurePipe implements PipeTransform {
     return new Date().toLocaleTimeString();
   }
 }
+ 

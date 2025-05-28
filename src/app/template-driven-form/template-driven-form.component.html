@@ -1,0 +1,117 @@
+<div class="container">
+  <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
+    <!-- <pre>value: {{ userForm.value | json }}</pre>
+    <pre>valid: {{ userForm.valid }}</pre>
+    <pre>invalid: {{ userForm.invalid }}</pre>
+    <pre>touched: {{ userForm.touched }}</pre>
+    <pre>untouched: {{ userForm.untouched }}</pre>
+    <pre>submitted: {{ userForm.submitted }}</pre> -->
+        <pre>valid: {{ userForm.valid }}</pre>
+    <h2 class="m-2 center">User Information</h2>
+
+    <div class="form-group m-2">
+      <label>First Name</label>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Enter First Name"
+        name="firstName"
+        #fname="ngModel"
+        [(ngModel)]="userObject.firstName"
+        required
+        minlength="5s"
+        />
+        @if((fname?.dirty || fname?.touched)) {
+            @if(fname?.errors?.['required']) {
+                <small class="text-danger">First Name is required</small>
+            }
+            @if(fname?.errors?.['minlength']) {
+                <small class="text-danger">First Name must be at least 5 characters</small>
+            }
+            
+        }
+    </div>
+
+    <!-- <pre>valid: {{ fname.valid }}</pre> 
+    <pre>invalid: {{ fname.invalid }}</pre>
+    <pre>touched: {{ fname.touched }}</pre>
+    <pre>untouched: {{ fname.untouched }}</pre> -->
+    <div class="form-group m-2">
+      <label>Last Name</label>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Enter Last Name"
+        name="lastName"
+        #lname="ngModel"
+        [(ngModel)]="userObject.lastName"
+        required
+        maxlength="5"
+      />
+      @if((lname?.dirty || lname?.touched)) {
+            @if(lname?.errors?.['required']) {
+                <small class="text-danger">Last Name is required</small>
+            }
+            @if(lname?.errors?.['maxlength']) {
+                <small class="text-danger">Last Name must be at most 5 characters</small>
+            }
+      }
+    </div>
+    <div class="form-group m-2">
+      <label>Email</label>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Enter Email Address"
+        name="email"
+        #email="ngModel"
+        [(ngModel)]="userObject.email"
+        required
+        email
+        pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+      />
+      @if((email?.dirty || email?.touched)) {
+            @if(email?.errors?.['required']) {
+                <small class="text-danger">Email is required</small>
+            }
+            @if(email?.errors?.['email']) {
+                <small class="text-danger">Please enter a valid email address</small>
+            }
+          
+      }
+
+    </div>
+    <div class="form-group m-2">
+      <label>Password</label>
+      <input
+        type="password"
+        class="form-control"
+        placeholder="Enter Password"
+        name="password"
+        #password="ngModel"
+        [(ngModel)]="userObject.password"
+        required
+      />
+    </div>
+    <div class="form-group m-2">
+      <input
+        type="checkbox"
+        class="form-check-input m-1"
+        name="isCheck"
+        [(ngModel)]="userObject.isCheck"
+        required
+      />
+      <label>Check me out</label>
+    </div>
+    <button class="btn btn-primary m-2" [disabled]="!userForm.valid">Submit</button>
+    <button class="btn btn-primary m-2" (click)="setValues(userForm)">
+      Reset
+    </button>
+    <button class="btn btn-primary m-2" (click)="patchValues(userForm)">
+      Patch
+    </button>
+    <button class="btn btn-primary m-2" (click)="resetValues(userForm)">
+      Reset
+    </button>
+  </form>
+</div>
