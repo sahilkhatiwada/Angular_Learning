@@ -1,1 +1,24 @@
-<p>profile works!</p>
+<div class="m-3 ">
+<!-- 2. sharing business logic -->
+    @if(isEligible){
+        <h4 class="text-success">Eligible for Premium subscription</h4>
+    }@else{
+        <h4 class="text-danger">Not eligible for subscription</h4>
+    }
+
+    <!-- 1. Sharing data across components -->
+  <!-- <ul class="list-group list-unstyled">
+    <li>Id: {{ dummyData.id }}</li>
+    <li>Name: {{ dummyData.name }}</li>
+    <li>Username: {{ dummyData.username }}</li>
+    <li>Email: {{ dummyData.email }}</li>   
+  </ul> -->
+<!-- 3. interact with api using service -->
+
+ <ul *ngFor="let data of apiData">
+    <li>Id: {{ data.id }}</li>
+    <li>Name: {{ data.name }}</li>
+    <li>Username: {{ data.username }}</li>
+    <li>Email: {{ data.email }}</li>   
+  </ul>
+</div>

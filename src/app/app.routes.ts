@@ -7,6 +7,7 @@ import { BuiltInPipesComponent } from './built-in-pipes/built-in-pipes.component
 import { TemplateDrivenFormComponent } from './template-driven-form/template-driven-form.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { AttributeDirectivesComponent } from './attribute-directives/attribute-directives.component';
+import { ProfileComponent } from './profile/profile.component';
 
 export const routes: Routes = [
   // { path:"", component: UserComponent }, // Default route
@@ -23,6 +24,7 @@ export const routes: Routes = [
   { path: 'structural-directives', component: StructuralDirectivesComponent },
   { path: 'data-binding', component: DatabindingComponent },
   {path: 'built-in-pipes', component: BuiltInPipesComponent}, 
+  {path: 'profile', component: ProfileComponent},
   {
     path: 'attribute-directives', component: AttributeDirectivesComponent},
   
