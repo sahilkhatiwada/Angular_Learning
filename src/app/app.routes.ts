@@ -5,6 +5,8 @@ import { StructuralDirectivesComponent } from './structural-directives/structura
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { BuiltInPipesComponent } from './built-in-pipes/built-in-pipes.component';
 import { TemplateDrivenFormComponent } from './template-driven-form/template-driven-form.component';
+import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
+import { AttributeDirectivesComponent } from './attribute-directives/attribute-directives.component';
 
 export const routes: Routes = [
   // { path:"", component: UserComponent }, // Default route
@@ -21,7 +23,12 @@ export const routes: Routes = [
   { path: 'structural-directives', component: StructuralDirectivesComponent },
   { path: 'data-binding', component: DatabindingComponent },
   {path: 'built-in-pipes', component: BuiltInPipesComponent}, 
-  {path: 'template-driven-form', component: TemplateDrivenFormComponent}, // Assuming this is a placeholder for a future component
+  {
+    path: 'attribute-directives', component: AttributeDirectivesComponent},
+  
+  {path: 'template-driven-form', component: TemplateDrivenFormComponent}, 
+  // Assuming this is a placeholder for a future component
+  {path:'reactive-form', component: ReactiveFormComponent},
   {
     path: '**' , component: PageNotFoundComponent, // Wild card route
   }

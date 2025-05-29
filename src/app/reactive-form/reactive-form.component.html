@@ -1,0 +1,172 @@
+<div class="container">
+  <form [formGroup]="reactiveForm" (ngSubmit)="onSubmit()">
+    <h2 class="text-center m-3">Reactive Form: User Information</h2>
+    <div class="form-group m-2">
+      <label>First Name</label>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Enter First Name"
+        formControlName="firstName"
+      />
+    </div>
+   @if((reactiveForm.get('firstName')?.dirty || reactiveForm.get('firstName')?.touched)) {
+  @if(reactiveForm.get('firstName')?.errors?.['required']) {
+    <small class="text-danger">First Name is required</small>
+  }
+  @if(reactiveForm.get('firstName')?.errors?.['minlength']) {
+    <small class="text-danger">First Name must be at least 5 characters</small>
+  }
+}
+
+    <div class="form-group m-2">
+      <label>Last Name</label>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Enter Last Name"
+        formControlName="lastName"
+      />
+    </div>
+    @if((reactiveForm.controls['lastName'].dirty ||
+    reactiveForm.controls['lastName'].touched)) {
+    @if(reactiveForm.controls['lastName'].errors?.['required']) {
+    <small class="text-danger">Last Name is required</small>
+    } @if(reactiveForm.controls['lastName'].errors?.['maxlength']) {
+    <small class="text-danger">Last Name must be at most 15 characters</small>
+    } }
+    <div class="form-group m-2">
+      <label>Email</label>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Enter Email Address"
+        formControlName="email"
+      />
+    </div>
+    @if((reactiveForm.controls['email'].dirty ||
+    reactiveForm.controls['email'].touched)) {
+    @if(reactiveForm.controls['email'].errors?.['required']) {
+    <small class="text-danger">Email is required</small>
+    } @if(reactiveForm.controls['email'].errors?.['email']) {
+    <small class="text-danger">Email is invalid</small>
+    } }
+    <div class="form-group m-2">
+      <label>Password</label>
+      <input
+        type="password"
+        class="form-control"
+        placeholder="Enter Password"
+        formControlName="password"
+      />
+    </div>
+    @if((reactiveForm.controls['password'].dirty ||
+    reactiveForm.controls['password'].touched)) {
+    @if(reactiveForm.controls['password'].errors?.['required']) {
+    <small class="text-danger">Password is required</small>
+    } @if(reactiveForm.controls['password'].errors?.['minlength']) {
+    <small class="text-danger">Password must be at least 8 characters</small>
+    } }
+    <div class="form-group mt-3 mb-2">
+      <input
+        type="checkbox"
+        formControlName="isChecked"
+        class="form-check-input"
+        
+      />
+      <label>Check me out</label>
+    </div>
+    @if((reactiveForm.controls['isChecked'].dirty ||
+    reactiveForm.controls['isChecked'].touched)) {
+    @if(reactiveForm.controls['isChecked'].errors?.['required']) {
+    <small class="text-danger">Check box is required</small>
+    } }
+    <div class="form-group m-2" formArrayName="skills">
+      <button class="btn btn-primary" (click)="addSkills()">Add skills</button>
+      <div *ngFor="let skill of skills.controls; let i = index">
+        <div [formGroupName]="i">
+          {{ i + 1 }} Skill name : <input type="text" formControlName="skill" />
+          <button (click)="deleteSkills(i)">Delete Skills</button>
+        </div>
+      </div>
+    </div>
+    @if((reactiveForm.controls['skills'].dirty ||
+    reactiveForm.controls['skills'].touched)) {
+    @if(reactiveForm.controls['skills'].errors?.['required']) {
+    <small class="text-danger">Skills is required</small>
+    } }
+    <div formGroupName="address" class="m-2">
+      <h5 class="m-2">Address</h5>
+      <div class="form-group m-2">
+        <label>City</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Enter City"
+          formControlName="city"
+        />
+      </div>
+    @if((reactiveForm.get('address.city')?.dirty || reactiveForm.get('address.city')?.touched)) {
+  @if(reactiveForm.get('address.city')?.errors?.['required']) {
+    <small class="text-danger">City is required</small>
+  }
+}
+      <div class="form-group m-2">
+        <label>State</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Enter State"
+          formControlName="state"
+        />
+      </div>
+    @if((reactiveForm.get('address.state')?.dirty || reactiveForm.get('address.state')?.touched)) {
+  @if(reactiveForm.get('address.state')?.errors?.['required']) {
+    <small class="text-danger">City is required</small>
+  }
+}
+      <div class="form-group m-2">
+        <label>Zip</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Enter Zip"
+          formControlName="zip"
+        />
+      </div>
+     @if((reactiveForm.get('address.Zip')?.dirty || reactiveForm.get('address.Zip')?.touched)) {
+  @if(reactiveForm.get('address.Zip')?.errors?.['required']) {
+    <small class="text-danger">City is required</small>
+  }
+}
+      <div class="form-group m-2">
+        <label>Street</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Enter Street"
+          formControlName="street"
+        />
+      </div>
+     @if((reactiveForm.get('address.Street')?.dirty || reactiveForm.get('address.Street')?.touched)) {
+  @if(reactiveForm.get('address.Street')?.errors?.['required']) {
+    <small class="text-danger">City is required</small>
+  }
+}
+    </div>
+    <button
+      class="btn btn-primary"
+      type="submit"
+      [disabled]="reactiveForm.invalid"
+    >
+      Submit
+    </button>
+    <button class="btn btn-primary m-2" (click)="SetAllValues()">
+      SetAllValues
+    </button>
+    <button class="btn btn-primary m-2" (click)="patchValues()">
+      PatchValue
+    </button>
+    <button class="btn btn-primary m-2" (click)="resetValues()">Reset</button>
+  </form>
+</div>

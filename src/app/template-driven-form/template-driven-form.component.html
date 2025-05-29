@@ -1,5 +1,5 @@
 <div class="container">
-  <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
+  <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)" novalidate >
     <!-- <pre>value: {{ userForm.value | json }}</pre>
     <pre>valid: {{ userForm.valid }}</pre>
     <pre>invalid: {{ userForm.invalid }}</pre>
@@ -9,7 +9,7 @@
         <pre>valid: {{ userForm.valid }}</pre>
     <h2 class="m-2 center">User Information</h2>
 
-    <div class="form-group m-2">
+    <div class="form-group m-2"> 
       <label>First Name</label>
       <input
         type="text"
