@@ -13,6 +13,11 @@ base_url ="http://localhost:3000/users";
 getData() {
   return this._http.get<User2[]>(this.base_url);
 }
+
+postData(data : User2 ){
+  return this._http.post(this.base_url, data);
+
+}
 }
 
 
