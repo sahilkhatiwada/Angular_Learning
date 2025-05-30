@@ -8,6 +8,10 @@ import { TemplateDrivenFormComponent } from './template-driven-form/template-dri
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { AttributeDirectivesComponent } from './attribute-directives/attribute-directives.component';
 import { ProfileComponent } from './profile/profile.component';
+import { CrudComponent } from './crud/crud.component';
+import { AddUserComponent } from './add-user/add-user.component';
+import { ViewUserComponent } from './view-user/view-user.component';
+import { UpdateUserComponent } from './update-user/update-user.component';
 
 export const routes: Routes = [
   // { path:"", component: UserComponent }, // Default route
@@ -18,20 +22,37 @@ export const routes: Routes = [
     pathMatch: 'full', // Redirect to user component if no path is specified
   },
   // login routes here
-  
+
   { path: 'user', component: UserComponent },
   { path: 'data-binding', component: DatabindingComponent },
   { path: 'structural-directives', component: StructuralDirectivesComponent },
   { path: 'data-binding', component: DatabindingComponent },
-  {path: 'built-in-pipes', component: BuiltInPipesComponent}, 
-  {path: 'profile', component: ProfileComponent},
+  { path: 'built-in-pipes', component: BuiltInPipesComponent },
+  { path: 'profile', component: ProfileComponent },
+
   {
-    path: 'attribute-directives', component: AttributeDirectivesComponent},
-  
-  {path: 'template-driven-form', component: TemplateDrivenFormComponent}, 
+    path: 'add-user',
+    component: AddUserComponent,
+  },
+  {
+    path: 'view-user',
+    component: ViewUserComponent, // Assuming this is for viewing user details
+  },
+  {
+    path: 'update-user',
+    component: UpdateUserComponent, // Assuming this is for updating user details
+  },
+  {
+    path: 'attribute-directives',
+    component: AttributeDirectivesComponent,
+  },
+
+  { path: 'template-driven-form', component: TemplateDrivenFormComponent },
   // Assuming this is a placeholder for a future component
-  {path:'reactive-form', component: ReactiveFormComponent},
+  { path: 'reactive-form', component: ReactiveFormComponent },
+  { path: 'crud', component: CrudComponent },
   {
-    path: '**' , component: PageNotFoundComponent, // Wild card route
-  }
+    path: '**',
+    component: PageNotFoundComponent, // Wild card route
+  },
 ];
