@@ -1,0 +1,19 @@
+<div class="text-center mb-5"><h2>Angular 19 Resource API and rxResource</h2></div>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>User_ID</th>
+      <th>Username</th>
+      <th>Email</th>
+      <th>Password</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of apiData.value()">
+      <td>{{ data.user_id }}</td>
+      <td>{{ data.username }}</td>
+      <td>{{ data.email }}</td>
+      <td>{{ data.password }}</td>
+    </tr>
+  </tbody>
+</table>

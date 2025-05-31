@@ -12,6 +12,7 @@ import { CrudComponent } from './crud/crud.component';
 import { AddUserComponent } from './add-user/add-user.component';
 import { ViewUserComponent } from './view-user/view-user.component';
 import { UpdateUserComponent } from './update-user/update-user.component';
+import { ResourceApiComponent } from './resource-api/resource-api.component';
 
 export const routes: Routes = [
   // { path:"", component: UserComponent }, // Default route
@@ -30,6 +31,7 @@ export const routes: Routes = [
   { path: 'built-in-pipes', component: BuiltInPipesComponent },
   { path: 'profile', component: ProfileComponent },
 
+  {path:'resource-api', component: ResourceApiComponent},
   {
     path: 'add-user',
     component: AddUserComponent,
