@@ -3,14 +3,17 @@ import { Component, OnInit } from '@angular/core';
 import { CrudService } from '../crud.service';
 import { User2 } from '../user2';
 import { Router } from '@angular/router';
+import { ReusableComponentsComponent } from '../reusable/reusable-components.component';
 
 @Component({
   selector: 'app-crud',
-  imports: [CommonModule],
+  imports: [CommonModule,ReusableComponentsComponent],
   templateUrl: './crud.component.html',
   styleUrl: './crud.component.css'
 })
 export class CrudComponent implements OnInit {
+
+  parentProperty: string = 'Hello from Parent Component!';
 
   apiData: User2[] = [];
 

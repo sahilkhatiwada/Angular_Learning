@@ -13,6 +13,7 @@ import { AddUserComponent } from './add-user/add-user.component';
 import { ViewUserComponent } from './view-user/view-user.component';
 import { UpdateUserComponent } from './update-user/update-user.component';
 import { ResourceApiComponent } from './resource-api/resource-api.component';
+import { ReusableComponentsComponent } from './reusable/reusable-components.component';
 
 export const routes: Routes = [
   // { path:"", component: UserComponent }, // Default route
@@ -32,6 +33,7 @@ export const routes: Routes = [
   { path: 'profile', component: ProfileComponent },
 
   {path:'resource-api', component: ResourceApiComponent},
+  {path: 'reusable-component', component: ReusableComponentsComponent}, // Assuming this is a reusable component
   {
     path: 'add-user',
     component: AddUserComponent,
