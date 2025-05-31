@@ -18,6 +18,18 @@ postData(data : User2 ){
   return this._http.post(this.base_url, data);
 
 }
+
+getDataById(id: number) {
+  return this._http.get<User2>(`${this.base_url}/${id}`);
+}
+
+putDataById(id: number, data: User2) {
+  return this._http.put(`${this.base_url}/${id}`, data);
+}
+
+deleteDataById(id: number) {
+  return this._http.delete(`${this.base_url}/${id}`); 
+}
 }
 
 

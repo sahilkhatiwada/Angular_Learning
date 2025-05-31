@@ -1,1 +1,16 @@
-<p>view-user works!</p>
+<div class="card mt-4" style="width: 18rem;">
+ 
+  <div class="card-body">
+    <h5 class="card-title">{{ userData?.name }}</h5>
+    <p class="card-text">
+      <strong>Username:</strong> {{ userData.username }}<br>
+      <strong>Email:</strong> {{ userData.email }}
+    </p>
+    <button class="btn btn-success" (click)="onClose()">close</button>
+
+    
+
+  
+  </div>
+</div>
+

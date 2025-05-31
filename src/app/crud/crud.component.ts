@@ -29,4 +29,21 @@ addNewUser(){
 this.router.navigateByUrl('/add-user');
 }
 
+onUpdate(id : number){
+  this.router.navigate(['update-user', id]);
+}
+
+onView(id: number) {
+  this.router.navigate(['view-user', id]);
+}
+
+onDelete(id: number) {
+  this.crud.deleteDataById(id).subscribe(res => {
+   
+    this.getAllData();
+    alert('User deleted successfully');
+  });
+}
+
+
 }

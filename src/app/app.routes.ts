@@ -35,11 +35,11 @@ export const routes: Routes = [
     component: AddUserComponent,
   },
   {
-    path: 'view-user',
+    path: 'view-user/:id', // Using a parameter for user ID
     component: ViewUserComponent, // Assuming this is for viewing user details
   },
   {
-    path: 'update-user',
+    path: 'update-user/:id', // Using a parameter for user ID
     component: UpdateUserComponent, // Assuming this is for updating user details
   },
   {
