@@ -14,6 +14,8 @@ import { ViewUserComponent } from './view-user/view-user.component';
 import { UpdateUserComponent } from './update-user/update-user.component';
 import { ResourceApiComponent } from './resource-api/resource-api.component';
 import { ReusableComponentsComponent } from './reusable/reusable-components.component';
+import { ParentComponent } from './parent/parent.component';
+import { ChildComponent } from './child/child.component';
 
 export const routes: Routes = [
   // { path:"", component: UserComponent }, // Default route
@@ -31,7 +33,8 @@ export const routes: Routes = [
   { path: 'data-binding', component: DatabindingComponent },
   { path: 'built-in-pipes', component: BuiltInPipesComponent },
   { path: 'profile', component: ProfileComponent },
-
+  {path: 'parent', component: ParentComponent}, // Assuming this is a parent-child component example
+{path:'child',component: ChildComponent}, // Assuming this is a child component exampl
   {path:'resource-api', component: ResourceApiComponent},
   {path: 'reusable-component', component: ReusableComponentsComponent}, // Assuming this is a reusable component
   {

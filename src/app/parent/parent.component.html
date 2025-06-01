@@ -1,0 +1,56 @@
+<div class="container text-center">
+    <div class="row m-5">
+        <div class="col-12">
+            <div class="text-warning">
+                <h2>example of 1&2 parent to child and child to parent communication</h2>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-6">
+            <div class="text-info">
+<h2>Parent Component</h2>
+            </div>
+            <div class="text-warning m-3">
+                {{receiveMessage}}
+            </div>
+        </div>
+
+        <div class="vr p-0"></div>
+        <div class="col-5">
+            <app-child [childInputProperty]="parentProperty" (childOutputProperty)="receiveData($event)"></app-child>
+
+        </div>
+    </div>
+
+<div class="container text-center">
+    <div class="row m-5">
+        <div class="col-12">
+            <div class="text-warning">
+                <h2>example of 1&2 parent to child and child to parent communication</h2>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <app-sibling1 (sibling1OutputProperty)="receiveEvent1($event)" [sibling1InputProperty]="sibling2Data"></app-sibling1>
+        </div>
+        <div class="vr p-0"></div>
+        <div class="col-5">
+            <app-sibling2 [sibling2Prop]="sibling1Message" (sibling2Event)="receiveEvent2($event)"></app-sibling2>
+        </div>
+
+    </div>
+    <div class="row m-2">
+        <div class="col-12">
+            <div class="text-warning">
+                <h2>Example of 4 of view child</h2>
+            </div>
+        </div>
+    </div>
+    <div class="row m-2">
+<app-reusable></app-reusable>
+    </div>
+</div>
