@@ -21,7 +21,7 @@ sibling2Data: any;
 
 ngAfterViewInit(): void {
       if (this.reusableComponent) {
-    this.reusableComponent.childProperty = "greeting from parent";
+    // this.reusableComponent.childProperty = "Greeting from parent";
   }
 }
 
