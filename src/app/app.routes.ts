@@ -16,6 +16,7 @@ import { ResourceApiComponent } from './resource-api/resource-api.component';
 import { ReusableComponentsComponent } from './reusable/reusable-components.component';
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
+import { StorageComponent } from './storage/storage.component';
 
 export const routes: Routes = [
   // { path:"", component: UserComponent }, // Default route
@@ -26,7 +27,7 @@ export const routes: Routes = [
     pathMatch: 'full', // Redirect to user component if no path is specified
   },
   // login routes here
-
+{path:'storage', component: StorageComponent}, // Assuming this is for local storage or session storage example
   { path: 'user', component: UserComponent },
   { path: 'data-binding', component: DatabindingComponent },
   { path: 'structural-directives', component: StructuralDirectivesComponent },

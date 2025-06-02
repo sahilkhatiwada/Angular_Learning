@@ -1,0 +1,39 @@
+<div class="container text-center">
+  <div class="row m-4">
+   
+      <div class="col-3">
+        <button class="btn btn-info" (click)="setSessionStorage()">
+          Set Session Storage
+        </button>
+      </div>
+      <div class="col-3">
+        <button class="btn btn-info" (click)="getSessionStorage()">
+          getSession Storage
+        </button>
+      </div>
+      <div class="col-3">
+        <button class="btn btn-info" (click)="removeSessionStorage()">
+          Remove Session Storage
+        </button>
+      </div>
+      <div class="col-3">
+        <button class="btn btn-info" (click)="clearSessionStorage()">
+          Clear Session Storage
+        </button>
+      </div>
+    </div>
+  </div>
+  @if(sessionValue){
+  <div class="row m-4">
+    <div class="col-12">
+      <h3>Session Storage Value: {{ sessionValue }}</h3>
+    </div>
+  </div>
+  }@else {
+    <div class="row m-4">
+        <div class="col-12">
+        <h3>Session Storage Value already removed</h3>
+        </div>
+    </div>
+  }
+
